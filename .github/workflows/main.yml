@@ -19,7 +19,7 @@ jobs:
         password: "Viaan@1234"
 
     - name: Build Docker image
-      run: docker build -t rajashekaryakkanti/yourimage:latest .
+      run: docker pull ubuntu 
 
     - name: Push Docker image to Docker Hub
       run: docker push rajashekaryakkanti/yourimage:latest
