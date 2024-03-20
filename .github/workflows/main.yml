@@ -15,8 +15,8 @@ jobs:
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
       with:
-        username: ${{ rajashekaryakkanti }}
-        password: ${{ Viaan@1234 }}
+        username: "rajashekaryakkanti"
+        password: "Viaan@1234"
 
     - name: Build Docker image
       run: docker build -t rajashekaryakkanti/yourimage:latest .
