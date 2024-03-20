@@ -1,0 +1,25 @@
+name: Docker Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.rajashekaryakkanti }}
+        password: ${{ secrets.Viaan@1234 }}
+
+    - name: Build Docker image
+      run: docker build -t rajashekaryakkanti/yourimage:latest .
+
+    - name: Push Docker image to Docker Hub
+      run: docker push rajashekaryakkanti/yourimage:latest
