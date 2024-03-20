@@ -20,6 +20,9 @@ jobs:
 
     - name: Build Docker image
       run: docker build -t rajashekaryakkanti/nginx:latest . 
+      with:
+        context: .
+        file: ./Dockerfile
 
     - name: Push Docker image to Docker Hub
       run: docker push rajashekaryakkanti/nginx:latest
