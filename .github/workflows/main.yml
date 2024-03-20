@@ -18,11 +18,10 @@ jobs:
         username: "rajashekaryakkanti"
         password: "Viaan@1234"
 
-    - name: Build Docker image
-      run: docker build -t rajashekaryakkanti/nginx:latest . 
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v2
       with:
         context: .
         file: ./Dockerfile
-
-    - name: Push Docker image to Docker Hub
-      run: docker push rajashekaryakkanti/nginx:latest
+        push: true
+        tags: rajashekar/nginx:latest
